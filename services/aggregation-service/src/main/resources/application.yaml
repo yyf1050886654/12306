@@ -9,12 +9,12 @@ spring:
     url: jdbc:shardingsphere:classpath:shardingsphere-config-${database.emv:dev}.yaml
   data:
     redis:
-      host: 192.168.20.128
+      host: 127.0.0.1
       port: 6379
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.20.128:8848
+        server-addr: 127.0.0.1:8848
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         import-check:
@@ -23,7 +23,7 @@ spring:
       password: nacos
     sentinel:
       transport:
-        dashboard: 192.168.20.128:8858
+        dashboard: 127.0.0.1:8858
         port: 8719
   dynamic:
     thread-pool:
@@ -45,7 +45,7 @@ spring:
     allow-bean-definition-overriding: true
 
 rocketmq:
-  name-server: 192.168.20.128:9876
+  name-server: 127.0.0.1:9876
   producer:
     group: index12306_aggregation-service_common-message-execute_pg
     send-message-timeout: 2000
